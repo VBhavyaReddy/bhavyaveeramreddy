@@ -126,6 +126,7 @@
         <button class="star s3" data-interest="physics">✦<small>physics</small></button>
         <button class="star s4" data-interest="vlsi">✦<small>VLSI</small></button>
         <button class="star s5" data-interest="music">✦<small>music</small></button>
+        <button class="star s6" data-interest="writing">✦<small>writing</small></button>
         <div class="constellation-center">ME<br><span>✦</span></div>
       </div>
       <div class="interest-panel" id="interest-panel">
@@ -168,7 +169,15 @@
       </div>
 
       <div class="campus-role transcendent-role">
-        <div class="campus-role-top">
+        <div class="transcendent-banner">
+          <img src="assets/transcendent-team.png" alt="Transcendent team holding copies of Volume 15 Issue 1" />
+          <div class="transcendent-banner-caption">
+            <span>TRANSCENDENT · CBIT</span>
+            <b>where words, curiosity &amp; campus meet.</b>
+          </div>
+        </div>
+
+        <div class="campus-role-top transcendent-heading">
           <div>
             <span class="role-kicker">📰 TRANSCENDENT · CBIT</span>
             <h3>Turning curiosity into stories.</h3>
@@ -185,38 +194,47 @@
           <div>
             <p class="eyebrow">published at the orientation program</p>
             <h4>Two pieces. One little corner of the newsletter.</h4>
-            <p>My writing was featured in the CBIT Institute Newsletter, <em>Transcendent — Volume 15 Issue 1</em>, released for the 2026 Orientation Program.</p>
+            <p>My writing was featured in the CBIT Institute Newsletter, <em>Transcendent — Volume 15 Issue 1</em>, for the 2026 Orientation Program.</p>
           </div>
           <a class="button ghost" href="https://www.instagram.com/transcendent.cbit/" target="_blank" rel="noopener">read Transcendent ↗</a>
         </div>
 
-        <div class="article-grid">
-          <article class="article-card">
-            <div class="article-image article-page-one">
-              <span>VOL. 15 · ISSUE 1</span>
-              <b>WELCOME,<br>CLASS OF 2030</b>
-              <small>co-authored · page 1</small>
+        <div class="article-carousel" aria-label="Bhavya's Transcendent articles">
+          <div class="article-carousel-head">
+            <span class="article-carousel-count" id="article-carousel-count">01 / 02</span>
+            <div class="carousel-controls">
+              <button type="button" class="carousel-btn" id="article-prev" aria-label="Previous article">←</button>
+              <button type="button" class="carousel-btn" id="article-next" aria-label="Next article">→</button>
             </div>
-            <div class="article-body">
-              <span class="article-label">ORIENTATION NEWSLETTER · PAGE 1</span>
-              <h4>Welcome, Class of 2030</h4>
-              <p>A welcome piece written with Sanvith Murari and Sameeha Yasmin, reflecting on finding your way around CBIT, discovering its clubs, and making the next four years your own.</p>
-            </div>
-          </article>
+          </div>
+          <div class="article-track-wrap">
+            <div class="article-track" id="article-track">
+              <button type="button" class="article-card article-slide" data-article="welcome">
+                <div class="article-image article-page-one">
+                  <span>VOL. 15 · ISSUE 1</span>
+                  <b>WELCOME,<br>CLASS OF 2030</b>
+                  <small>co-authored · page 1</small>
+                </div>
+                <div class="article-body">
+                  <span class="article-label">ORIENTATION NEWSLETTER · PAGE 1</span>
+                  <h4>Welcome, Class of 2030</h4>
+                  <p>A welcome piece written with Sanvith Murari and Sameeha Yasmin, reflecting on finding your way around CBIT, discovering its clubs, and making the next four years your own.</p>
+                  <span class="article-open">open article card ↗</span>
+                </div>
+              </button>
 
-          <article class="article-card">
-            <img src="assets/transcendent-page-12.png" alt="Page 12 of Transcendent Volume 15 Issue 1 featuring Bhavya's article" />
-            <div class="article-body">
-              <span class="article-label">SCIENCE &amp; TECHNOLOGY · PAGE 12</span>
-              <h4>Dystopian Technology or Human Paranoia as Usual?</h4>
-              <p>An article exploring the possibilities and privacy questions surrounding AI-powered glasses, including accessibility, live translation and facial-data concerns.</p>
+              <button type="button" class="article-card article-slide" data-article="dystopian">
+                <img src="assets/transcendent-page-12.png" alt="Page 12 of Transcendent Volume 15 Issue 1 featuring Bhavya's article" />
+                <div class="article-body">
+                  <span class="article-label">SCIENCE &amp; TECHNOLOGY · PAGE 12</span>
+                  <h4>Dystopian Technology or Human Paranoia as Usual?</h4>
+                  <p>An article exploring AI-powered glasses, accessibility, live translation and the privacy questions around facial data.</p>
+                  <span class="article-open">open article card ↗</span>
+                </div>
+              </button>
             </div>
-          </article>
-        </div>
-
-        <div class="campus-team-photo">
-          <img src="assets/transcendent-team.png" alt="Transcendent team holding copies of the newsletter" />
-          <p>Transcendent · Volume 15 Issue 1 · 2026</p>
+          </div>
+          <p class="carousel-hint">click a card to read the story · swipe on mobile</p>
         </div>
       </div>
 
@@ -237,6 +255,18 @@
           <span>event ideation</span>
           <span>creative collaboration</span>
         </div>
+      </div>
+
+      <div class="document-links">
+        <a href="assets/autonomous-rover-navigation-report.pdf" target="_blank" rel="noopener">
+          <span>🤖</span><div><b>Autonomous Rover — Technical Report</b><small>camera + YOLO + LiDAR navigation system</small></div><strong>PDF ↗</strong>
+        </a>
+        <a href="assets/pid-line-following-rover.pdf" target="_blank" rel="noopener">
+          <span>〽️</span><div><b>PID Line Following Rover</b><small>CoppeliaSim · C · PID control</small></div><strong>PDF ↗</strong>
+        </a>
+        <a href="assets/transcendent-volume-15-issue-1.pdf" target="_blank" rel="noopener">
+          <span>📰</span><div><b>Transcendent — Volume 15 Issue 1</b><small>the full college newsletter</small></div><strong>PDF ↗</strong>
+        </a>
       </div>
 
       <div class="writing-links">
@@ -280,6 +310,14 @@
     <span>made with curiosity ✦</span>
     <span>© 2026 Bhavya</span>
   </footer>
+
+  <div class="modal" id="article-modal" aria-hidden="true">
+    <div class="modal-backdrop article-modal-backdrop"></div>
+    <div class="modal-box article-modal-box">
+      <button class="modal-close" id="article-modal-close" aria-label="Close article">×</button>
+      <div id="article-modal-content"></div>
+    </div>
+  </div>
 
   <div class="modal" id="project-modal" aria-hidden="true">
     <div class="modal-backdrop"></div>

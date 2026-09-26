@@ -17,7 +17,8 @@ const interestData = {
   aerospace: ["AEROSPACE", "Rovers, rockets, drones and spacecraft sit at a really fun intersection of physics and engineering. I'm interested in how we make machines work where the environment isn't forgiving."],
   physics: ["PHYSICS", "Astrophysics, particle physics, dark matter, accelerators — basically any question that starts with “but why does the universe do that?”"],
   vlsi: ["VLSI", "I'm interested in how complicated systems can be built from tiny electronic building blocks, and how hardware design connects to the software running on top of it."],
-  music: ["MUSIC", "I play guitar, sing and write songs. Engineering brain off. Music brain on. (Sometimes both are on at the same time.)"]
+  music: ["MUSIC", `I play guitar, sing and write songs. Engineering brain off. Music brain on. (Sometimes both are on at the same time.)<br><a class="interest-link" href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener">visit my singing page ↗</a>`],
+  writing: ["WRITING", `I love turning ideas into words — from science and technology pieces to the random thoughts that refuse to stay in my head.<br><a class="interest-link" href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener">read my writing on Medium ↗</a>`]
 };
 
 document.querySelectorAll('.star').forEach(star => {
@@ -29,6 +30,63 @@ document.querySelectorAll('.star').forEach(star => {
   });
 });
 
+const articleData = {
+  welcome: {
+    label: "ORIENTATION NEWSLETTER · PAGE 1",
+    title: "Welcome, Class of 2030",
+    meta: "Co-authored with Sanvith Murari & Sameeha Yasmin",
+    body: "A warm welcome to CBIT's incoming batch, reflecting on finding your way around campus, discovering clubs and friendships, and growing into the next four years.",
+    note: "The piece closes by welcoming the Class of 2030 to script their own version of Happy Days.",
+    image: ""
+  },
+  dystopian: {
+    label: "SCIENCE & TECHNOLOGY · PAGE 12",
+    title: "Dystopian Technology or Human Paranoia as Usual?",
+    meta: "Bhavya Veeramreddy · Sub-Editor",
+    body: "An exploration of AI-powered glasses, including accessibility features such as live transcription, translation and scene description, alongside questions about privacy and facial data.",
+    note: "The article asks whether today's reaction to AI glasses echoes earlier waves of technology-driven paranoia.",
+    image: "assets/transcendent-page-12.png"
+  }
+};
+
+const articleTrack = document.querySelector('#article-track');
+const articleSlides = [...document.querySelectorAll('.article-slide')];
+const articleCount = document.querySelector('#article-carousel-count');
+let articleIndex = 0;
+function showArticleSlide(index) {
+  if (!articleTrack || !articleSlides.length) return;
+  articleIndex = (index + articleSlides.length) % articleSlides.length;
+  articleTrack.style.transform = `translateX(-${articleIndex * 100}%)`;
+  if (articleCount) articleCount.textContent = `0${articleIndex + 1} / 0${articleSlides.length}`;
+}
+document.querySelector('#article-prev')?.addEventListener('click', () => showArticleSlide(articleIndex - 1));
+document.querySelector('#article-next')?.addEventListener('click', () => showArticleSlide(articleIndex + 1));
+
+const articleModal = document.querySelector('#article-modal');
+const articleModalContent = document.querySelector('#article-modal-content');
+function openArticle(key) {
+  const a = articleData[key];
+  if (!a || !articleModalContent) return;
+  articleModalContent.innerHTML = `
+    ${a.image ? `<img class="article-modal-image" src="${a.image}" alt="${a.title}">` : `<div class="article-modal-cover"><span>VOL. 15 · ISSUE 1</span><b>WELCOME,<br>CLASS OF 2030</b></div>`}
+    <div class="eyebrow">${a.label}</div>
+    <h3>${a.title}</h3>
+    <p class="article-modal-meta">${a.meta}</p>
+    <p>${a.body}</p>
+    <p>${a.note}</p>`;
+  articleModal.classList.add('open');
+  articleModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+articleSlides.forEach(slide => slide.addEventListener('click', () => openArticle(slide.dataset.article)));
+function closeArticleModal() {
+  articleModal?.classList.remove('open');
+  articleModal?.setAttribute('aria-hidden','true');
+  if (!document.querySelector('#project-modal.open')) document.body.style.overflow='';
+}
+document.querySelector('#article-modal-close')?.addEventListener('click', closeArticleModal);
+document.querySelector('.article-modal-backdrop')?.addEventListener('click', closeArticleModal);
+
 const projects = {
   rover: {
     title: "Autonomous Rover",
@@ -36,7 +94,7 @@ const projects = {
     body: `<p>A proposed autonomous navigation system where the rover first identifies a target class, searches its surroundings, then moves toward the target while using perception and distance sensing to stay safe.</p>
       <h4>System idea</h4>
       <ul><li>Camera → Raspberry Pi → OpenCV preprocessing → YOLO target detection</li><li>LiDAR provides distance information for navigation and obstacle awareness</li><li>Raspberry Pi sends movement decisions to an ESP32</li><li>ESP32 controls the motors through an L298N motor driver</li></ul>
-      <h4>Key technologies</h4><p>Raspberry Pi · ESP32 · OpenCV · YOLO · LiDAR · L298N · Python/C++</p>`
+      <h4>Key technologies</h4><p>Raspberry Pi · ESP32 · OpenCV · YOLO · LiDAR · L298N · Python/C++</p><a class="button ghost modal-report-link" href="assets/autonomous-rover-navigation-report.pdf" target="_blank" rel="noopener">open technical report ↗</a>`
   },
   coppelia: {
     title: "CoppeliaSim Rover",
@@ -71,4 +129,4 @@ function closeModal() {
 }
 document.querySelector('.modal-close').addEventListener('click', closeModal);
 document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeArticleModal(); } });
