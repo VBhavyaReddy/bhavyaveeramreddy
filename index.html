@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bhavya's little corner of the internet — engineering, robotics, aerospace, physics, and music." />
+  <title>Bhavya — Little Corner of the Internet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a class="brand" href="#home">b<span>.</span></a>
+    <div class="nav-links">
+      <a href="#projects">projects</a>
+      <a href="#interests">interests</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+    </div>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="pulse"></span> currently building things</p>
+        <h1>Hi, I'm<br><span>Bhavya.</span></h1>
+        <p class="hero-copy">
+          An ECE student who likes making machines move, wondering how the universe works,
+          and occasionally turning random ideas into projects.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">explore my work <span>↗</span></a>
+          <a class="button ghost" href="#about">a little about me</a>
+        </div>
+      </div>
+
+      <div class="hero-card floating">
+        <div class="card-top">
+          <span>✦ LIVE STATUS</span>
+          <span class="status-dot">●</span>
+        </div>
+        <div class="status-row"><span>🎓</span><b>ECE @ CBIT</b></div>
+        <div class="status-row"><span>🤖</span><span>Building an autonomous rover</span></div>
+        <div class="status-row"><span>🚀</span><span>Exploring aerospace + robotics</span></div>
+        <div class="status-row"><span>🔭</span><span>Thinking about physics</span></div>
+        <div class="status-row"><span>🎸</span><span>Playing guitar</span></div>
+      </div>
+
+      <div class="scroll-hint">scroll to explore <span>↓</span></div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / things I've built</p>
+          <h2>Projects<span>.</span></h2>
+        </div>
+        <p class="section-note">A growing collection of things I've designed, coded, wired, broken, and fixed.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card featured">
+          <div class="project-visual rover-visual">
+            <div class="rover-icon">🤖</div>
+            <div class="scan-line"></div>
+            <span class="visual-label">AUTONOMOUS NAVIGATION</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>ROBOTICS</span><span>2026</span></div>
+            <h3>Autonomous Rover</h3>
+            <p>Vision-based rover concept using Raspberry Pi, camera input, OpenCV/YOLO, ESP32 and LiDAR for target detection and autonomous navigation.</p>
+            <div class="tags"><span>Raspberry Pi</span><span>ESP32</span><span>YOLO</span><span>OpenCV</span></div>
+            <button class="text-button" data-project="rover">view project →</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual fpga-visual"><span>PID</span><small>LINE FOLLOWING</small></div>
+          <div class="project-body">
+            <div class="project-meta"><span>SIMULATION</span><span>2026</span></div>
+            <h3>CoppeliaSim Rover</h3>
+            <p>Implemented and explored PID-based line-following logic for a simulated rover environment.</p>
+            <div class="tags"><span>C</span><span>PID</span><span>CoppeliaSim</span></div>
+            <button class="text-button" data-project="coppelia">view project →</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual workshop-visual">
+            <span class="big-number">01</span>
+            <span class="visual-label">OBSTACLE<br>AVOIDANCE</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>WORKSHOP</span><span>2025</span></div>
+            <h3>Obstacle-Avoidance Rover</h3>
+            <p>Built a working rover using an ESP32, L298N motor driver, ultrasonic sensor and four DC geared motors.</p>
+            <div class="tags"><span>ESP32</span><span>HC-SR04</span><span>Arduino</span></div>
+            <button class="text-button" data-project="workshop">view project →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="interests" class="section interests-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / things I wonder about</p>
+          <h2>My little constellation<span>.</span></h2>
+        </div>
+        <p class="section-note">Click a star. There's probably a rabbit hole behind it.</p>
+      </div>
+
+      <div class="constellation">
+        <div class="constellation-lines"></div>
+        <button class="star s1" data-interest="robotics">✦<small>robotics</small></button>
+        <button class="star s2" data-interest="aerospace">✦<small>aerospace</small></button>
+        <button class="star s3" data-interest="physics">✦<small>physics</small></button>
+        <button class="star s4" data-interest="vlsi">✦<small>VLSI</small></button>
+        <button class="star s5" data-interest="music">✦<small>music</small></button>
+        <div class="constellation-center">ME<br><span>✦</span></div>
+      </div>
+      <div class="interest-panel" id="interest-panel">
+        <span>✦ choose a star</span>
+        <p>Robots? Rockets? Particles? Music? Pick one.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / hello, human</p>
+          <h2>About me<span>.</span></h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="large-copy">I'm an ECE student who gets disproportionately excited when an idea goes from <em>“wait, could this work?”</em> to an actual working thing.</p>
+          <p>I'm especially drawn to robotics, aerospace, electronics, computer vision and the physics behind the things we build. I like learning by making — which usually means a suspicious number of wires, diagrams, simulations and tabs open at once.</p>
+          <p>Long term, I'd love to work at the intersection of engineering and fundamental science, while continuing to build things simply because they're fascinating.</p>
+        </div>
+        <div class="mini-cards">
+          <div class="mini-card"><span>🎓</span><b>ECE</b><small>student</small></div>
+          <div class="mini-card"><span>🛠️</span><b>BUILD</b><small>learn by making</small></div>
+          <div class="mini-card"><span>🌌</span><b>SPACE</b><small>always curious</small></div>
+          <div class="mini-card"><span>🎵</span><b>MUSIC</b><small>guitar + songs</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section currently-section">
+      <div class="currently">
+        <div>
+          <p class="eyebrow">right now</p>
+          <h2>What I'm up to<span>.</span></h2>
+        </div>
+        <div class="currently-list">
+          <div><span>01</span><b>Building</b><p>autonomous rover systems</p></div>
+          <div><span>02</span><b>Learning</b><p>electronics, VLSI & computer vision</p></div>
+          <div><span>03</span><b>Exploring</b><p>aerospace & fundamental physics</p></div>
+          <div><span>04</span><b>Creating</b><p>music, ideas & occasionally chaos</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <p class="eyebrow">04 / say hi</p>
+      <h2>Let's build something<br><span>interesting.</span></h2>
+      <p>If you've got a project, idea, research rabbit hole, or just want to talk about cool machines — hello.</p>
+      <div class="contact-links">
+        <a href="mailto:vbhavyareddy7@gmail.com">email ↗</a>
+        <a href="https://github.com/VBhavyaReddy" target="_blank" rel="noopener">github ↗</a>
+        <a href="https://www.linkedin.com/in/bhavya-veeramreddy-026672377/" target="_blank" rel="noopener">linkedin ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>made with curiosity ✦</span>
+    <span>© 2026 Bhavya</span>
+  </footer>
+
+  <div class="modal" id="project-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
