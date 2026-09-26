@@ -41,3 +41,6 @@ You can also replace the placeholder project descriptions and add images inside 
 - GitHub project links
 - Project architecture diagrams
 - A custom domain
+
+### Personal sections
+The site includes a campus activities section for Transcendent and Communicando, plus links to Medium and the singing page.
