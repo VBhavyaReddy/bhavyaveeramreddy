@@ -226,3 +226,29 @@ footer { display:flex; justify-content:space-between; padding:28px 9vw; color:va
   .article-carousel { padding:13px; }
   .article-modal-cover b { font-size:32px; }
 }
+
+/* V6 refinements */
+.constellation { height:270px; max-width:1100px; }
+.constellation-lines { inset:122px 4% auto; height:1px; background:rgba(201,183,255,.18); }
+.constellation-stars { position:absolute; left:2%; right:2%; top:78px; display:grid; grid-template-columns:repeat(6,1fr); align-items:start; }
+.constellation-stars .star { position:relative; left:auto; right:auto; top:auto; bottom:auto; justify-self:center; }
+.constellation-center { top:190px; width:72px; height:52px; border-radius:50px; font-size:9px; }
+.constellation-center span { font-size:14px; margin-top:1px; }
+.article-card > img { height:300px; object-fit:cover; object-position:center; background:rgba(8,7,17,.8); }
+.article-slide .article-body { min-height:180px; }
+.article-modal-image { width:100%; max-height:78vh; object-fit:contain; object-position:center; background:#080711; margin:0; }
+.article-full-image-link { display:block; border-radius:16px; overflow:hidden; margin-bottom:22px; cursor:zoom-in; }
+.article-full-image-link:hover .article-modal-image { opacity:.96; }
+.document-links { margin-bottom:0; }
+.writing-links { margin-top:8px; }
+.project-video { margin-top:20px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#080711; }
+.project-video video { width:100%; display:block; max-height:430px; background:#000; }
+.project-video small { display:block; padding:10px 13px; color:var(--muted); font:9px "DM Mono",monospace; }
+@media (max-width:620px){
+  .constellation { height:310px; }
+  .constellation-stars { top:70px; left:0; right:0; grid-template-columns:repeat(3,1fr); row-gap:38px; }
+  .constellation-lines { top:108px; height:92px; left:7%; right:7%; background:linear-gradient(90deg,transparent 0%,rgba(201,183,255,.16) 12%,rgba(201,183,255,.16) 88%,transparent 100%); }
+  .constellation-center { top:245px; }
+  .article-card > img { height:230px; }
+}
+.article-card > img { object-fit:contain; object-position:center; }

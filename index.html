@@ -121,12 +121,14 @@
 
       <div class="constellation">
         <div class="constellation-lines"></div>
-        <button class="star s1" data-interest="robotics">✦<small>robotics</small></button>
-        <button class="star s2" data-interest="aerospace">✦<small>aerospace</small></button>
-        <button class="star s3" data-interest="physics">✦<small>physics</small></button>
-        <button class="star s4" data-interest="vlsi">✦<small>VLSI</small></button>
-        <button class="star s5" data-interest="music">✦<small>music</small></button>
-        <button class="star s6" data-interest="writing">✦<small>writing</small></button>
+        <div class="constellation-stars">
+          <button class="star" data-interest="robotics">✦<small>robotics</small></button>
+          <button class="star" data-interest="aerospace">✦<small>aerospace</small></button>
+          <button class="star" data-interest="physics">✦<small>physics</small></button>
+          <button class="star" data-interest="vlsi">✦<small>VLSI</small></button>
+          <button class="star" data-interest="music">✦<small>music</small></button>
+          <button class="star" data-interest="writing">✦<small>writing</small></button>
+        </div>
         <div class="constellation-center">ME<br><span>✦</span></div>
       </div>
       <div class="interest-panel" id="interest-panel">
@@ -183,7 +185,7 @@
             <h3>Turning curiosity into stories.</h3>
             <p class="role-title">Sub-Editor · Science &amp; Technology</p>
           </div>
-          <a class="role-link" href="https://www.instagram.com/transcendent.cbit/" target="_blank" rel="noopener">Transcendent ↗</a>
+          <a class="role-link" href="https://www.linkedin.com/company/transcendent-cbit/posts/?feedView=all" target="_blank" rel="noopener">Transcendent on LinkedIn ↗</a>
         </div>
         <p class="role-description">
           As a Sub-Editor in Science &amp; Technology, I work on communicating science and technology through student journalism.
@@ -193,15 +195,15 @@
         <div class="publication-intro">
           <div>
             <p class="eyebrow">published at the orientation program</p>
-            <h4>Two pieces. One little corner of the newsletter.</h4>
-            <p>My writing was featured in the CBIT Institute Newsletter, <em>Transcendent — Volume 15 Issue 1</em>, for the 2026 Orientation Program.</p>
+            <h4>Two newsletter pieces + one more science &amp; tech story.</h4>
+            <p>Two of these pieces were featured in the CBIT Institute Newsletter, <em>Transcendent — Volume 15 Issue 1</em>, for the 2026 Orientation Program. The third is another Science &amp; Technology piece published through Transcendent.</p>
           </div>
           <a class="button ghost" href="https://www.instagram.com/transcendent.cbit/" target="_blank" rel="noopener">read Transcendent ↗</a>
         </div>
 
         <div class="article-carousel" aria-label="Bhavya's Transcendent articles">
           <div class="article-carousel-head">
-            <span class="article-carousel-count" id="article-carousel-count">01 / 02</span>
+            <span class="article-carousel-count" id="article-carousel-count">01 / 03</span>
             <div class="carousel-controls">
               <button type="button" class="carousel-btn" id="article-prev" aria-label="Previous article">←</button>
               <button type="button" class="carousel-btn" id="article-next" aria-label="Next article">→</button>
@@ -210,31 +212,37 @@
           <div class="article-track-wrap">
             <div class="article-track" id="article-track">
               <button type="button" class="article-card article-slide" data-article="welcome">
-                <div class="article-image article-page-one">
-                  <span>VOL. 15 · ISSUE 1</span>
-                  <b>WELCOME,<br>CLASS OF 2030</b>
-                  <small>co-authored · page 1</small>
-                </div>
+                <img src="assets/transcendent-welcome-article.png" alt="Bhavya's Welcome, Class of 2030 article from Transcendent Volume 15 Issue 1" />
                 <div class="article-body">
                   <span class="article-label">ORIENTATION NEWSLETTER · PAGE 1</span>
                   <h4>Welcome, Class of 2030</h4>
                   <p>A welcome piece written with Sanvith Murari and Sameeha Yasmin, reflecting on finding your way around CBIT, discovering its clubs, and making the next four years your own.</p>
-                  <span class="article-open">open article card ↗</span>
+                  <span class="article-open">open full article ↗</span>
                 </div>
               </button>
 
               <button type="button" class="article-card article-slide" data-article="dystopian">
-                <img src="assets/transcendent-page-12.png" alt="Page 12 of Transcendent Volume 15 Issue 1 featuring Bhavya's article" />
+                <img src="assets/transcendent-dystopian-article.png" alt="Bhavya's Dystopian Technology or Human Paranoia as Usual? article from Transcendent Volume 15 Issue 1" />
                 <div class="article-body">
                   <span class="article-label">SCIENCE &amp; TECHNOLOGY · PAGE 12</span>
                   <h4>Dystopian Technology or Human Paranoia as Usual?</h4>
                   <p>An article exploring AI-powered glasses, accessibility, live translation and the privacy questions around facial data.</p>
-                  <span class="article-open">open article card ↗</span>
+                  <span class="article-open">open full article ↗</span>
+                </div>
+              </button>
+
+              <button type="button" class="article-card article-slide" data-article="mri">
+                <img src="assets/transcendent-mri-article.png" alt="Bhavya's What If Getting an MRI Was as Easy as Taking a Photo? article" />
+                <div class="article-body">
+                  <span class="article-label">SCIENCE &amp; TECHNOLOGY · TRANSCENDENT</span>
+                  <h4>What If Getting an MRI Was as Easy as Taking a Photo?</h4>
+                  <p>A look at Ultrasonic CT, the idea of making medical imaging faster and more accessible, and what that could mean for routine healthcare.</p>
+                  <span class="article-open">open full article ↗</span>
                 </div>
               </button>
             </div>
           </div>
-          <p class="carousel-hint">click a card to read the story · swipe on mobile</p>
+          <p class="carousel-hint">click a card to open the full article · swipe on mobile</p>
         </div>
       </div>
 
@@ -263,6 +271,9 @@
         </a>
         <a href="assets/pid-line-following-rover.pdf" target="_blank" rel="noopener">
           <span>〽️</span><div><b>PID Line Following Rover</b><small>CoppeliaSim · C · PID control</small></div><strong>PDF ↗</strong>
+        </a>
+        <a href="assets/pid-line-following-simulation.mp4" target="_blank" rel="noopener">
+          <span>▶️</span><div><b>PID Line Following — Simulation</b><small>CoppeliaSim working demonstration</small></div><strong>VIDEO ↗</strong>
         </a>
         <a href="assets/transcendent-volume-15-issue-1.pdf" target="_blank" rel="noopener">
           <span>📰</span><div><b>Transcendent — Volume 15 Issue 1</b><small>the full college newsletter</small></div><strong>PDF ↗</strong>

@@ -37,7 +37,7 @@ const articleData = {
     meta: "Co-authored with Sanvith Murari & Sameeha Yasmin",
     body: "A warm welcome to CBIT's incoming batch, reflecting on finding your way around campus, discovering clubs and friendships, and growing into the next four years.",
     note: "The piece closes by welcoming the Class of 2030 to script their own version of Happy Days.",
-    image: ""
+    image: "assets/transcendent-welcome-article.png"
   },
   dystopian: {
     label: "SCIENCE & TECHNOLOGY · PAGE 12",
@@ -45,7 +45,15 @@ const articleData = {
     meta: "Bhavya Veeramreddy · Sub-Editor",
     body: "An exploration of AI-powered glasses, including accessibility features such as live transcription, translation and scene description, alongside questions about privacy and facial data.",
     note: "The article asks whether today's reaction to AI glasses echoes earlier waves of technology-driven paranoia.",
-    image: "assets/transcendent-page-12.png"
+    image: "assets/transcendent-dystopian-article.png"
+  },
+  mri: {
+    label: "SCIENCE & TECHNOLOGY · TRANSCENDENT",
+    title: "What If Getting an MRI Was as Easy as Taking a Photo?",
+    meta: "Bhavya Veeramreddy · Sub-Editor",
+    body: "A look at Midjourney Medical's Ultrasonic CT (USCT) technology and the idea of making medical imaging easier, faster and more accessible.",
+    note: "The piece explores how ultrasound, large-scale sensing and computing could make routine imaging feel less intimidating and more accessible.",
+    image: "assets/transcendent-mri-article.png"
   }
 };
 
@@ -68,7 +76,7 @@ function openArticle(key) {
   const a = articleData[key];
   if (!a || !articleModalContent) return;
   articleModalContent.innerHTML = `
-    ${a.image ? `<img class="article-modal-image" src="${a.image}" alt="${a.title}">` : `<div class="article-modal-cover"><span>VOL. 15 · ISSUE 1</span><b>WELCOME,<br>CLASS OF 2030</b></div>`}
+    ${a.image ? `<a class="article-full-image-link" href="${a.image}" target="_blank" rel="noopener" aria-label="Open full article image"><img class="article-modal-image" src="${a.image}" alt="${a.title}"></a>` : `<div class="article-modal-cover"><span>VOL. 15 · ISSUE 1</span><b>WELCOME,<br>CLASS OF 2030</b></div>`}
     <div class="eyebrow">${a.label}</div>
     <h3>${a.title}</h3>
     <p class="article-modal-meta">${a.meta}</p>
@@ -79,6 +87,21 @@ function openArticle(key) {
   document.body.style.overflow='hidden';
 }
 articleSlides.forEach(slide => slide.addEventListener('click', () => openArticle(slide.dataset.article)));
+let articleTouchStartX = 0;
+let articleTouchStartY = 0;
+articleTrack?.addEventListener('touchstart', (e) => {
+  const t = e.changedTouches[0];
+  articleTouchStartX = t.clientX;
+  articleTouchStartY = t.clientY;
+}, {passive:true});
+articleTrack?.addEventListener('touchend', (e) => {
+  const t = e.changedTouches[0];
+  const dx = t.clientX - articleTouchStartX;
+  const dy = t.clientY - articleTouchStartY;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+    showArticleSlide(articleIndex + (dx < 0 ? 1 : -1));
+  }
+}, {passive:true});
 function closeArticleModal() {
   articleModal?.classList.remove('open');
   articleModal?.setAttribute('aria-hidden','true');
@@ -100,7 +123,9 @@ const projects = {
     title: "CoppeliaSim Rover",
     category: "SIMULATION / CONTROL",
     body: `<p>A simulated rover task focused on implementing PID line-following logic in C and integrating the controller with a CoppeliaSim environment.</p>
-      <h4>What I explored</h4><ul><li>Reading sensor information from the simulated rover</li><li>Calculating error relative to the desired path</li><li>Using proportional, integral and derivative terms</li><li>Converting controller output into motor commands</li></ul>`
+      <h4>What I explored</h4><ul><li>Reading sensor information from the simulated rover</li><li>Calculating error relative to the desired path</li><li>Using proportional, integral and derivative terms</li><li>Converting controller output into motor commands</li></ul>
+      <a class="button ghost modal-report-link" href="assets/pid-line-following-rover.pdf" target="_blank" rel="noopener">open PID report ↗</a>
+      <div class="project-video"><video controls playsinline preload="metadata" src="assets/pid-line-following-simulation.mp4"></video><small>PID line-following simulation · working demonstration</small></div>`
   },
   workshop: {
     title: "Obstacle-Avoidance Rover",
