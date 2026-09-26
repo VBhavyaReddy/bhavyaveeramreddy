@@ -227,28 +227,40 @@ footer { display:flex; justify-content:space-between; padding:28px 9vw; color:va
   .article-modal-cover b { font-size:32px; }
 }
 
-/* V6 refinements */
-.constellation { height:270px; max-width:1100px; }
-.constellation-lines { inset:122px 4% auto; height:1px; background:rgba(201,183,255,.18); }
-.constellation-stars { position:absolute; left:2%; right:2%; top:78px; display:grid; grid-template-columns:repeat(6,1fr); align-items:start; }
-.constellation-stars .star { position:relative; left:auto; right:auto; top:auto; bottom:auto; justify-self:center; }
-.constellation-center { top:190px; width:72px; height:52px; border-radius:50px; font-size:9px; }
-.constellation-center span { font-size:14px; margin-top:1px; }
-.article-card > img { height:300px; object-fit:cover; object-position:center; background:rgba(8,7,17,.8); }
-.article-slide .article-body { min-height:180px; }
+/* V7 refinements */
+.constellation { height:480px; max-width:900px; margin:0 auto; position:relative; }
+.constellation-lines { position:absolute; inset:70px 12%; background:
+ linear-gradient(24deg, transparent 49.7%, rgba(201,183,255,.12) 50%, transparent 50.3%),
+ linear-gradient(152deg, transparent 49.7%, rgba(201,183,255,.10) 50%, transparent 50.3%),
+ linear-gradient(72deg, transparent 49.8%, rgba(139,228,209,.08) 50%, transparent 50.2%); }
+.constellation-center { left:50%; top:50%; width:125px; height:125px; border-radius:50%; font-size:11px; }
+.s1 { left:12%; top:25%; }
+.s2 { right:16%; top:13%; }
+.s3 { right:8%; top:43%; bottom:auto; }
+.s4 { left:25%; bottom:14%; }
+.s5 { left:47%; top:8%; }
+.s6 { left:73%; top:auto; bottom:9%; }
+.constellation-stars { position:static; }
+.article-carousel-title { font:9px "DM Mono",monospace; color:var(--accent); letter-spacing:.12em; text-transform:uppercase; }
+.article-card > img { height:300px; object-fit:contain; object-position:center; background:rgba(8,7,17,.8); }
+.article-slide[data-article="mri"] > img { height:520px; }
+.article-slide[data-article="mri"] .article-body { min-height:170px; }
 .article-modal-image { width:100%; max-height:78vh; object-fit:contain; object-position:center; background:#080711; margin:0; }
 .article-full-image-link { display:block; border-radius:16px; overflow:hidden; margin-bottom:22px; cursor:zoom-in; }
 .article-full-image-link:hover .article-modal-image { opacity:.96; }
-.document-links { margin-bottom:0; }
-.writing-links { margin-top:8px; }
-.project-video { margin-top:20px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#080711; }
-.project-video video { width:100%; display:block; max-height:430px; background:#000; }
-.project-video small { display:block; padding:10px 13px; color:var(--muted); font:9px "DM Mono",monospace; }
-@media (max-width:620px){
-  .constellation { height:310px; }
-  .constellation-stars { top:70px; left:0; right:0; grid-template-columns:repeat(3,1fr); row-gap:38px; }
-  .constellation-lines { top:108px; height:92px; left:7%; right:7%; background:linear-gradient(90deg,transparent 0%,rgba(201,183,255,.16) 12%,rgba(201,183,255,.16) 88%,transparent 100%); }
-  .constellation-center { top:245px; }
-  .article-card > img { height:230px; }
+@media (max-width:900px){
+  .s3 { right:7%; top:48%; }
+  .s6 { left:70%; bottom:7%; }
+  .article-slide[data-article="mri"] > img { height:470px; }
 }
-.article-card > img { object-fit:contain; object-position:center; }
+@media (max-width:620px){
+  .constellation { height:390px; }
+  .s1 { left:4%; top:25%; }
+  .s2 { right:5%; top:13%; }
+  .s3 { right:1%; top:47%; }
+  .s4 { left:8%; bottom:14%; }
+  .s5 { left:43%; top:8%; }
+  .s6 { left:68%; bottom:5%; top:auto; }
+  .constellation-center { width:95px; height:95px; }
+  .article-slide[data-article="mri"] > img { height:390px; }
+}

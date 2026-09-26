@@ -59,13 +59,11 @@ const articleData = {
 
 const articleTrack = document.querySelector('#article-track');
 const articleSlides = [...document.querySelectorAll('.article-slide')];
-const articleCount = document.querySelector('#article-carousel-count');
 let articleIndex = 0;
 function showArticleSlide(index) {
   if (!articleTrack || !articleSlides.length) return;
   articleIndex = (index + articleSlides.length) % articleSlides.length;
   articleTrack.style.transform = `translateX(-${articleIndex * 100}%)`;
-  if (articleCount) articleCount.textContent = `0${articleIndex + 1} / 0${articleSlides.length}`;
 }
 document.querySelector('#article-prev')?.addEventListener('click', () => showArticleSlide(articleIndex - 1));
 document.querySelector('#article-next')?.addEventListener('click', () => showArticleSlide(articleIndex + 1));
@@ -152,6 +150,6 @@ function closeModal() {
   modal.setAttribute('aria-hidden','true');
   document.body.style.overflow = '';
 }
-document.querySelector('.modal-close').addEventListener('click', closeModal);
-document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+document.querySelector('#project-modal .modal-close')?.addEventListener('click', closeModal);
+document.querySelector('#project-modal .modal-backdrop')?.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeArticleModal(); } });
