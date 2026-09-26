@@ -127,6 +127,7 @@
         <button class="star s4" data-interest="vlsi">✦<small>VLSI</small></button>
         <button class="star s5" data-interest="music">✦<small>music</small></button>
         <button class="star s6" data-interest="writing">✦<small>writing</small></button>
+        <button class="star s7" data-interest="reading">✦<small>reading</small></button>
         <div class="constellation-center">ME<br><span>✦</span></div>
       </div>
       <div class="interest-panel" id="interest-panel">
@@ -170,7 +171,9 @@
 
       <div class="campus-role transcendent-role">
         <div class="transcendent-banner">
-          <img src="assets/transcendent-team.png" alt="Transcendent team holding copies of Volume 15 Issue 1" />
+          <button type="button" class="team-image-trigger" id="team-image-trigger" aria-label="Open full Transcendent team photo">
+            <img src="assets/transcendent-team.png" alt="Transcendent team holding copies of Volume 15 Issue 1" />
+          </button>
           <div class="transcendent-banner-caption">
             <span>TRANSCENDENT · CBIT</span>
             <b>where words, curiosity &amp; campus meet.</b>
@@ -326,6 +329,14 @@
     <div class="modal-box article-modal-box">
       <button class="modal-close" id="article-modal-close" aria-label="Close article">×</button>
       <div id="article-modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal image-modal" id="image-modal" aria-hidden="true">
+    <div class="modal-backdrop image-modal-backdrop"></div>
+    <div class="image-modal-box">
+      <button class="modal-close image-modal-close" type="button" aria-label="Close image">×</button>
+      <img id="image-modal-img" src="" alt="" />
     </div>
   </div>
 

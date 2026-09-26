@@ -17,8 +17,9 @@ const interestData = {
   aerospace: ["AEROSPACE", "Rovers, rockets, drones and spacecraft sit at a really fun intersection of physics and engineering. I'm interested in how we make machines work where the environment isn't forgiving."],
   physics: ["PHYSICS", "Astrophysics, particle physics, dark matter, accelerators — basically any question that starts with “but why does the universe do that?”"],
   vlsi: ["VLSI", "I'm interested in how complicated systems can be built from tiny electronic building blocks, and how hardware design connects to the software running on top of it."],
-  music: ["MUSIC", `I play guitar, sing and write songs. Engineering brain off. Music brain on. (Sometimes both are on at the same time.)<br><a class="interest-link" href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener">visit my singing page ↗</a>`],
-  writing: ["WRITING", `I love turning ideas into words — from science and technology pieces to the random thoughts that refuse to stay in my head.<br><a class="interest-link" href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener">read my writing on Medium ↗</a>`]
+  music: ["MUSIC", `I play guitar, sing and write songs. Engineering brain off. Music brain on. (Sometimes both are on at the same time.)<br><span class="swift-reference">“I can make the whole place shimmer.” ✦</span><br><a class="interest-link" href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener">visit my singing page ↗</a>`],
+  writing: ["WRITING", `I love turning ideas into words — from science and technology pieces to the random thoughts that refuse to stay in my head.<br><a class="interest-link" href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener">read my writing on Medium ↗</a>`],
+  reading: ["READING", `Books are another kind of rabbit hole — especially stories that make me disappear into another world for a while.`]
 };
 
 document.querySelectorAll('.star').forEach(star => {
@@ -108,6 +109,25 @@ function closeArticleModal() {
 document.querySelector('#article-modal-close')?.addEventListener('click', closeArticleModal);
 document.querySelector('.article-modal-backdrop')?.addEventListener('click', closeArticleModal);
 
+const imageModal = document.querySelector('#image-modal');
+const imageModalImg = document.querySelector('#image-modal-img');
+function openImageModal(src, alt='') {
+  if (!imageModal || !imageModalImg) return;
+  imageModalImg.src = src;
+  imageModalImg.alt = alt;
+  imageModal.classList.add('open');
+  imageModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeImageModal() {
+  imageModal?.classList.remove('open');
+  imageModal?.setAttribute('aria-hidden','true');
+  if (!document.querySelector('#project-modal.open') && !document.querySelector('#article-modal.open')) document.body.style.overflow='';
+}
+document.querySelector('#team-image-trigger')?.addEventListener('click', () => openImageModal('assets/transcendent-team.png', 'Full Transcendent team photo'));
+document.querySelector('.image-modal-close')?.addEventListener('click', closeImageModal);
+document.querySelector('.image-modal-backdrop')?.addEventListener('click', closeImageModal);
+
 const projects = {
   rover: {
     title: "Autonomous Rover",
@@ -152,4 +172,4 @@ function closeModal() {
 }
 document.querySelector('#project-modal .modal-close')?.addEventListener('click', closeModal);
 document.querySelector('#project-modal .modal-backdrop')?.addEventListener('click', closeModal);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeArticleModal(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeArticleModal(); closeImageModal(); } });
