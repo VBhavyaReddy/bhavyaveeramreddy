@@ -13,13 +13,13 @@ menuBtn?.addEventListener('click', () => nav.classList.toggle('mobile-open'));
 document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('mobile-open')));
 
 const interestData = {
-  robotics: ["ROBOTICS", "I like the combination of electronics, control, software and physical movement — especially when a machine actually responds to the world around it."],
+  robotics: ["ROBOTICS", "I like making machines think, move, and react to the world around them."],
   aerospace: ["AEROSPACE", "Rovers, rockets, drones and spacecraft sit at a really fun intersection of physics and engineering. I'm interested in how we make machines work where the environment isn't forgiving."],
-  physics: ["PHYSICS", "Astrophysics, particle physics, dark matter, accelerators — basically any question that starts with “but why does the universe do that?”"],
+  physics: ["PHYSICS", "Astrophysics, particle physics, dark matter, accelerators, basically any question that starts with “but why does the universe do that?”"],
   vlsi: ["VLSI", "I'm interested in how complicated systems can be built from tiny electronic building blocks, and how hardware design connects to the software running on top of it."],
-  music: ["MUSIC", `I play guitar, sing and write songs. Engineering brain off. Music brain on. (Sometimes both are on at the same time.)<br><span class="swift-reference">“I can make the whole place shimmer.” ✦</span><br><a class="interest-link" href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener">visit my singing page ↗</a>`],
-  writing: ["WRITING", `I love turning ideas into words — from science and technology pieces to the random thoughts that refuse to stay in my head.<br><a class="interest-link" href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener">read my writing on Medium ↗</a>`],
-  reading: ["READING", `Books are another kind of rabbit hole — especially stories that make me disappear into another world for a while.`],
+  music: ["MUSIC", `I play guitar, sing and write songs. Turns out, circuits and chords get along pretty well.<br><span class="swift-reference">“I can make the whole place shimmer.” ✦</span><br><a class="interest-link" href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener">visit my singing page ↗</a>`],
+  writing: ["WRITING", `I love turning ideas into words, from science and technology pieces to the random thoughts that refuse to stay in my head.<br><a class="interest-link" href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener">read my writing on Medium ↗</a>`],
+  reading: ["READING", `Books are another way to disappear for a while, especially stories that pull me completely into another world.`],
   photography: ["PHOTOGRAPHY", `I love photography for the same reason I love pretty skies: sometimes something is beautiful for only a moment, and I like keeping a little piece of it.<br><a class="interest-link" href="#photography">see my camera roll ↗</a>`]
 };
 
