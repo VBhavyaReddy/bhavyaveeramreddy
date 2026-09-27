@@ -314,3 +314,118 @@ footer { display:flex; justify-content:space-between; padding:28px 9vw; color:va
   .s6 { left:18%; top:51%; }
   .s7 { left:23%; top:19%; }
 }
+
+/* V10: photography + cleaner social presence + in-panel reports */
+.s1 { left:50%; top:8%; right:auto; bottom:auto; transform:translateX(-50%); }
+.s2 { left:75%; top:18%; right:auto; bottom:auto; }
+.s3 { left:84%; top:43%; right:auto; bottom:auto; }
+.s4 { left:72%; top:auto; right:auto; bottom:18%; }
+.s5 { left:50%; top:auto; right:auto; bottom:7%; transform:translateX(-50%); }
+.s6 { left:28%; top:auto; right:auto; bottom:18%; }
+.s7 { left:16%; top:50%; right:auto; bottom:auto; }
+.s8 { left:25%; top:18%; right:auto; bottom:auto; }
+.s5:hover, .s5.active { transform:translateX(-50%) scale(1.3); }
+
+.photography-section { padding-top:24px; }
+.photo-grid { display:grid; grid-template-columns:1.25fr .875fr .875fr; gap:14px; margin-top:12px; }
+.photo-card { min-height:270px; border:1px solid var(--line); border-radius:20px; padding:22px; color:var(--text); background:
+  radial-gradient(circle at 25% 20%, rgba(201,183,255,.13), transparent 34%),
+  linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+  position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-start; text-align:left; cursor:default; }
+.photo-card:before { content:""; position:absolute; inset:16px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; pointer-events:none; }
+.photo-card:after { content:""; position:absolute; width:180px; height:180px; border-radius:50%; background:rgba(201,183,255,.08); filter:blur(35px); top:-70px; right:-45px; }
+.photo-slot-wide { min-height:320px; }
+.photo-placeholder-mark { position:absolute; top:31px; left:31px; font-size:25px; color:var(--accent); opacity:.8; }
+.photo-card > span:last-child { position:relative; z-index:1; display:flex; flex-direction:column; gap:6px; }
+.photo-card b { font-size:16px; letter-spacing:-.02em; }
+.photo-card small { color:var(--muted); max-width:280px; line-height:1.5; font-size:11px; }
+.photo-note { margin-top:14px; display:flex; align-items:center; gap:10px; padding:13px 15px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; color:var(--muted); background:rgba(8,7,17,.22); }
+.photo-note span { font-size:18px; }
+.photo-note p { margin:0; font-size:11px; line-height:1.5; }
+.photo-note code { font-family:"DM Mono",monospace; color:var(--accent2); font-size:10px; }
+
+.document-link { width:100%; display:flex; align-items:center; gap:14px; padding:17px 18px; border:1px solid var(--line); border-radius:16px; background:rgba(8,7,17,.42); color:inherit; text-align:left; cursor:pointer; transition:transform .2s ease,border-color .2s ease; font:inherit; }
+.document-link:hover { transform:translateY(-3px); border-color:rgba(255,255,255,.25); }
+.document-link > span { font-size:24px; }
+.document-link div { flex:1; }
+.document-link b { display:block; font-size:14px; }
+.document-link small { display:block; margin-top:4px; opacity:.62; font-size:11px; line-height:1.4; }
+.document-link strong { font:9px "DM Mono",monospace; opacity:.72; white-space:nowrap; }
+
+.project-modal-box { width:min(900px,100%); max-height:90vh; padding:36px; }
+.project-modal-content { overflow:visible; }
+.embedded-report { margin-top:20px; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:#080711; }
+.embedded-report-head { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:11px 14px; border-bottom:1px solid var(--line); background:rgba(255,255,255,.025); }
+.embedded-report-head span { font:9px "DM Mono",monospace; color:var(--accent); letter-spacing:.12em; }
+.embedded-report-head small { color:var(--muted); font:9px "DM Mono",monospace; }
+.embedded-report iframe { display:block; width:100%; height:520px; border:0; background:#fff; }
+.project-video { margin-top:22px; }
+.project-video video { display:block; width:100%; max-height:430px; object-fit:contain; border:1px solid var(--line); border-radius:16px; background:#05050b; }
+.project-video small { display:block; margin-top:8px; color:var(--muted); font:9px "DM Mono",monospace; letter-spacing:.04em; }
+
+.social-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; max-width:760px; }
+.social-links a { display:flex; align-items:center; gap:10px; padding:13px 15px; border:1px solid var(--line); border-radius:14px; text-decoration:none; color:var(--text); background:rgba(8,7,17,.3); border-bottom:1px solid var(--line); transition:transform .2s ease,border-color .2s ease; }
+.social-links a:hover { transform:translateY(-2px); border-color:rgba(201,183,255,.4); }
+.social-links a span { font-size:18px; }
+.social-note { margin-top:12px !important; color:var(--muted) !important; font-size:10px !important; opacity:.75; }
+
+@media (max-width:900px){
+  .s1 { left:50%; top:7%; }
+  .s2 { left:76%; top:17%; }
+  .s3 { left:84%; top:43%; }
+  .s4 { left:72%; bottom:15%; }
+  .s5 { left:50%; bottom:6%; }
+  .s6 { left:28%; bottom:15%; }
+  .s7 { left:16%; top:50%; }
+  .s8 { left:24%; top:17%; }
+  .photo-grid { grid-template-columns:1fr 1fr; }
+  .photo-slot-wide { grid-column:1 / -1; min-height:280px; }
+  .project-modal-box { width:min(860px,100%); padding:30px; }
+  .embedded-report iframe { height:480px; }
+}
+@media (max-width:620px){
+  .constellation { height:400px; }
+  .s1 { left:50%; top:6%; }
+  .s2 { left:76%; top:17%; }
+  .s3 { left:83%; top:43%; }
+  .s4 { left:71%; bottom:13%; }
+  .s5 { left:50%; bottom:4%; }
+  .s6 { left:29%; bottom:13%; }
+  .s7 { left:17%; top:48%; }
+  .s8 { left:24%; top:17%; }
+  .photo-grid { grid-template-columns:1fr; }
+  .photo-slot-wide { grid-column:auto; min-height:250px; }
+  .photo-card { min-height:220px; }
+  .social-links { grid-template-columns:1fr; }
+  .project-modal-box { padding:27px 18px 22px; max-height:92vh; }
+  .project-modal-box h3 { font-size:32px; padding-right:25px; }
+  .embedded-report iframe { height:430px; }
+  .embedded-report-head { align-items:flex-start; flex-direction:column; gap:5px; }
+}
+
+/* V10.1 — preserve the PID simulation's native 8:5 aspect ratio */
+.project-video {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #05050b;
+}
+.project-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: #05050b;
+}
+.project-video small {
+  display: none;
+}
+@media (max-width:620px){
+  .project-video { aspect-ratio: 8 / 5; }
+}

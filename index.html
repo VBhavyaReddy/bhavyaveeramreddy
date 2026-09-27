@@ -19,6 +19,7 @@
     <div class="nav-links">
       <a href="#projects">projects</a>
       <a href="#interests">interests</a>
+      <a href="#photography">photography</a>
       <a href="#about">about</a>
       <a href="#campus">campus</a>
       <a href="#contact">contact</a>
@@ -128,11 +129,42 @@
         <button class="star s5" data-interest="music">✦<small>music</small></button>
         <button class="star s6" data-interest="writing">✦<small>writing</small></button>
         <button class="star s7" data-interest="reading">✦<small>reading</small></button>
+        <button class="star s8" data-interest="photography">✦<small>photography</small></button>
         <div class="constellation-center">ME<br><span>✦</span></div>
       </div>
       <div class="interest-panel" id="interest-panel">
         <span>✦ choose a star</span>
         <p>Robots? Rockets? Particles? Music? Pick one.</p>
+      </div>
+    </section>
+
+    <section id="photography" class="section photography-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">a little camera roll</p>
+          <h2>Things I stopped to notice<span>.</span></h2>
+        </div>
+        <p class="section-note">A small collection of photographs I love — because sometimes the best thing to build is a memory.</p>
+      </div>
+
+      <div class="photo-grid">
+        <button class="photo-card photo-slot photo-slot-wide" type="button" data-photo-slot="1">
+          <span class="photo-placeholder-mark">✦</span>
+          <span><b>photo slot one</b><small>drop a favourite sky, place or moment here</small></span>
+        </button>
+        <button class="photo-card photo-slot" type="button" data-photo-slot="2">
+          <span class="photo-placeholder-mark">✦</span>
+          <span><b>photo slot two</b><small>something you noticed and had to capture</small></span>
+        </button>
+        <button class="photo-card photo-slot" type="button" data-photo-slot="3">
+          <span class="photo-placeholder-mark">✦</span>
+          <span><b>photo slot three</b><small>a little piece of the world you wanted to keep</small></span>
+        </button>
+      </div>
+
+      <div class="photo-note">
+        <span>📷</span>
+        <p>These are intentionally left as clean photo slots for now — add your own images to <code>assets/photos/</code> when you're ready.</p>
       </div>
     </section>
 
@@ -268,12 +300,12 @@
       </div>
 
       <div class="document-links">
-        <a href="assets/autonomous-rover-navigation-report.pdf" target="_blank" rel="noopener">
-          <span>🤖</span><div><b>Autonomous Rover — Technical Report</b><small>camera + YOLO + LiDAR navigation system</small></div><strong>PDF ↗</strong>
-        </a>
-        <a href="assets/pid-line-following-rover.pdf" target="_blank" rel="noopener">
-          <span>〽️</span><div><b>PID Line Following Rover</b><small>CoppeliaSim · C · PID control</small></div><strong>PDF ↗</strong>
-        </a>
+        <button type="button" class="document-link" data-project="rover">
+          <span>🤖</span><div><b>Autonomous Rover — Technical Report</b><small>read the PDF inside the project panel</small></div><strong>VIEW ↗</strong>
+        </button>
+        <button type="button" class="document-link" data-project="coppelia">
+          <span>〽️</span><div><b>PID Line Following Rover</b><small>read the PDF inside the project panel</small></div><strong>VIEW ↗</strong>
+        </button>
         <a href="assets/pid-line-following-simulation.mp4" target="_blank" rel="noopener">
           <span>▶️</span><div><b>PID Line Following — Simulation</b><small>CoppeliaSim working demonstration</small></div><strong>VIDEO ↗</strong>
         </a>
@@ -311,11 +343,13 @@
       <p class="eyebrow">05 / say hi</p>
       <h2>Let's build something<br><span>interesting.</span></h2>
       <p>If you've got a project, idea, research rabbit hole, or just want to talk about cool machines — hello.</p>
-      <div class="contact-links">
-        <a href="mailto:YOUR_EMAIL@example.com">email ↗</a>
-        <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">github ↗</a>
-        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">linkedin ↗</a>
+      <div class="contact-links social-links">
+        <a href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener"><span>🎤</span>singing Instagram ↗</a>
+        <a href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener"><span>✍️</span>Medium ↗</a>
+        <a href="https://www.instagram.com/transcendent.cbit/" target="_blank" rel="noopener"><span>📰</span>Transcendent Instagram ↗</a>
+        <a href="https://www.linkedin.com/company/transcendent-cbit/posts/?feedView=all" target="_blank" rel="noopener"><span>💼</span>Transcendent LinkedIn ↗</a>
       </div>
+      <p class="social-note">Personal GitHub, LinkedIn and email can be added here whenever you want them public.</p>
     </section>
   </main>
 
@@ -342,9 +376,9 @@
 
   <div class="modal" id="project-modal" aria-hidden="true">
     <div class="modal-backdrop"></div>
-    <div class="modal-box">
+    <div class="modal-box project-modal-box">
       <button class="modal-close" aria-label="Close">×</button>
-      <div id="modal-content"></div>
+      <div id="modal-content" class="project-modal-content"></div>
     </div>
   </div>
 

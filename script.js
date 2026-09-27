@@ -19,7 +19,8 @@ const interestData = {
   vlsi: ["VLSI", "I'm interested in how complicated systems can be built from tiny electronic building blocks, and how hardware design connects to the software running on top of it."],
   music: ["MUSIC", `I play guitar, sing and write songs. Engineering brain off. Music brain on. (Sometimes both are on at the same time.)<br><span class="swift-reference">“I can make the whole place shimmer.” ✦</span><br><a class="interest-link" href="https://www.instagram.com/sing.now.bhavya/" target="_blank" rel="noopener">visit my singing page ↗</a>`],
   writing: ["WRITING", `I love turning ideas into words — from science and technology pieces to the random thoughts that refuse to stay in my head.<br><a class="interest-link" href="https://medium.com/@vbhavyareddy7" target="_blank" rel="noopener">read my writing on Medium ↗</a>`],
-  reading: ["READING", `Books are another kind of rabbit hole — especially stories that make me disappear into another world for a while.`]
+  reading: ["READING", `Books are another kind of rabbit hole — especially stories that make me disappear into another world for a while.`],
+  photography: ["PHOTOGRAPHY", `I love photography for the same reason I love pretty skies: sometimes something is beautiful for only a moment, and I like keeping a little piece of it.<br><a class="interest-link" href="#photography">see my camera roll ↗</a>`]
 };
 
 document.querySelectorAll('.star').forEach(star => {
@@ -135,14 +136,15 @@ const projects = {
     body: `<p>A proposed autonomous navigation system where the rover first identifies a target class, searches its surroundings, then moves toward the target while using perception and distance sensing to stay safe.</p>
       <h4>System idea</h4>
       <ul><li>Camera → Raspberry Pi → OpenCV preprocessing → YOLO target detection</li><li>LiDAR provides distance information for navigation and obstacle awareness</li><li>Raspberry Pi sends movement decisions to an ESP32</li><li>ESP32 controls the motors through an L298N motor driver</li></ul>
-      <h4>Key technologies</h4><p>Raspberry Pi · ESP32 · OpenCV · YOLO · LiDAR · L298N · Python/C++</p><a class="button ghost modal-report-link" href="assets/autonomous-rover-navigation-report.pdf" target="_blank" rel="noopener">open technical report ↗</a>`
+      <h4>Key technologies</h4><p>Raspberry Pi · ESP32 · OpenCV · YOLO · LiDAR · L298N · Python/C++</p>
+      <div class="embedded-report"><div class="embedded-report-head"><span>TECHNICAL REPORT</span><small>scroll inside the report</small></div><iframe title="Autonomous Rover Technical Report" src="assets/autonomous-rover-navigation-report.pdf#toolbar=0&navpanes=0&scrollbar=1" loading="lazy"></iframe></div>`
   },
   coppelia: {
     title: "CoppeliaSim Rover",
     category: "SIMULATION / CONTROL",
     body: `<p>A simulated rover task focused on implementing PID line-following logic in C and integrating the controller with a CoppeliaSim environment.</p>
       <h4>What I explored</h4><ul><li>Reading sensor information from the simulated rover</li><li>Calculating error relative to the desired path</li><li>Using proportional, integral and derivative terms</li><li>Converting controller output into motor commands</li></ul>
-      <a class="button ghost modal-report-link" href="assets/pid-line-following-rover.pdf" target="_blank" rel="noopener">open PID report ↗</a>
+      <div class="embedded-report"><div class="embedded-report-head"><span>PID TECHNICAL REPORT</span><small>scroll inside the report</small></div><iframe title="PID Line Following Rover Technical Report" src="assets/pid-line-following-rover.pdf#toolbar=0&navpanes=0&scrollbar=1" loading="lazy"></iframe></div>
       <div class="project-video"><video controls playsinline preload="metadata" src="assets/pid-line-following-simulation.mp4"></video><small>PID line-following simulation · working demonstration</small></div>`
   },
   workshop: {
