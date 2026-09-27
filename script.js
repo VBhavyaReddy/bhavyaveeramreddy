@@ -128,6 +128,33 @@ function closeImageModal() {
 document.querySelector('#team-image-trigger')?.addEventListener('click', () => openImageModal('assets/transcendent-team.png', 'Full Transcendent team photo'));
 document.querySelector('.image-modal-close')?.addEventListener('click', closeImageModal);
 document.querySelector('.image-modal-backdrop')?.addEventListener('click', closeImageModal);
+document.querySelectorAll('.photo-image-card').forEach(card => {
+  card.addEventListener('click', () => openImageModal(card.dataset.photo, card.dataset.photoAlt || 'Photography'));
+});
+
+const pdfFullscreenModal = document.querySelector('#pdf-fullscreen-modal');
+const pdfFullscreenFrame = document.querySelector('#pdf-fullscreen-frame');
+const pdfFullscreenTitle = document.querySelector('#pdf-fullscreen-title');
+function openPdfFullscreen(src, title='Technical Report') {
+  if (!pdfFullscreenModal || !pdfFullscreenFrame) return;
+  pdfFullscreenFrame.src = `${src}#toolbar=1&navpanes=0&scrollbar=1`;
+  if (pdfFullscreenTitle) pdfFullscreenTitle.textContent = title;
+  pdfFullscreenModal.classList.add('open');
+  pdfFullscreenModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closePdfFullscreen() {
+  pdfFullscreenModal?.classList.remove('open');
+  pdfFullscreenModal?.setAttribute('aria-hidden','true');
+  if (pdfFullscreenFrame) pdfFullscreenFrame.src='';
+  if (!document.querySelector('#project-modal.open') && !document.querySelector('#article-modal.open') && !document.querySelector('#image-modal.open')) document.body.style.overflow='';
+}
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.pdf-fullscreen-btn');
+  if (btn) openPdfFullscreen(btn.dataset.pdf, btn.dataset.pdfTitle);
+});
+document.querySelector('#pdf-fullscreen-close')?.addEventListener('click', closePdfFullscreen);
+document.querySelector('.pdf-fullscreen-backdrop')?.addEventListener('click', closePdfFullscreen);
 
 const projects = {
   rover: {
@@ -137,14 +164,14 @@ const projects = {
       <h4>System idea</h4>
       <ul><li>Camera → Raspberry Pi → OpenCV preprocessing → YOLO target detection</li><li>LiDAR provides distance information for navigation and obstacle awareness</li><li>Raspberry Pi sends movement decisions to an ESP32</li><li>ESP32 controls the motors through an L298N motor driver</li></ul>
       <h4>Key technologies</h4><p>Raspberry Pi · ESP32 · OpenCV · YOLO · LiDAR · L298N · Python/C++</p>
-      <div class="embedded-report"><div class="embedded-report-head"><span>TECHNICAL REPORT</span><small>scroll inside the report</small></div><iframe title="Autonomous Rover Technical Report" src="assets/autonomous-rover-navigation-report.pdf#toolbar=0&navpanes=0&scrollbar=1" loading="lazy"></iframe></div>`
+      <div class="embedded-report"><div class="embedded-report-head"><span>TECHNICAL REPORT</span><small>scroll inside the report</small></div><iframe title="Autonomous Rover Technical Report" src="assets/autonomous-rover-navigation-report.pdf#toolbar=0&navpanes=0&scrollbar=1" loading="lazy"></iframe><div class="embedded-report-actions"><button type="button" class="pdf-fullscreen-btn" data-pdf="assets/autonomous-rover-navigation-report.pdf" data-pdf-title="Autonomous Rover · Technical Report">view full screen ↗</button></div></div>`
   },
   coppelia: {
     title: "CoppeliaSim Rover",
     category: "SIMULATION / CONTROL",
     body: `<p>A simulated rover task focused on implementing PID line-following logic in C and integrating the controller with a CoppeliaSim environment.</p>
       <h4>What I explored</h4><ul><li>Reading sensor information from the simulated rover</li><li>Calculating error relative to the desired path</li><li>Using proportional, integral and derivative terms</li><li>Converting controller output into motor commands</li></ul>
-      <div class="embedded-report"><div class="embedded-report-head"><span>PID TECHNICAL REPORT</span><small>scroll inside the report</small></div><iframe title="PID Line Following Rover Technical Report" src="assets/pid-line-following-rover.pdf#toolbar=0&navpanes=0&scrollbar=1" loading="lazy"></iframe></div>
+      <div class="embedded-report"><div class="embedded-report-head"><span>PID TECHNICAL REPORT</span><small>scroll inside the report</small></div><iframe title="PID Line Following Rover Technical Report" src="assets/pid-line-following-rover.pdf#toolbar=0&navpanes=0&scrollbar=1" loading="lazy"></iframe><div class="embedded-report-actions"><button type="button" class="pdf-fullscreen-btn" data-pdf="assets/pid-line-following-rover.pdf" data-pdf-title="PID Line Following Rover · Technical Report">view full screen ↗</button></div></div>
       <div class="project-video"><video controls playsinline preload="metadata" src="assets/pid-line-following-simulation.mp4"></video><small>PID line-following simulation · working demonstration</small></div>`
   },
   workshop: {
@@ -174,4 +201,4 @@ function closeModal() {
 }
 document.querySelector('#project-modal .modal-close')?.addEventListener('click', closeModal);
 document.querySelector('#project-modal .modal-backdrop')?.addEventListener('click', closeModal);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeArticleModal(); closeImageModal(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePdfFullscreen(); closeModal(); closeArticleModal(); closeImageModal(); } });

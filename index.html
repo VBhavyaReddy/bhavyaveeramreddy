@@ -19,9 +19,9 @@
     <div class="nav-links">
       <a href="#projects">projects</a>
       <a href="#interests">interests</a>
-      <a href="#photography">photography</a>
       <a href="#about">about</a>
       <a href="#campus">campus</a>
+      <a href="#photography">photography</a>
       <a href="#contact">contact</a>
     </div>
     <button class="menu-btn" aria-label="Open menu">☰</button>
@@ -138,40 +138,10 @@
       </div>
     </section>
 
-    <section id="photography" class="section photography-section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">a little camera roll</p>
-          <h2>Things I stopped to notice<span>.</span></h2>
-        </div>
-        <p class="section-note">A small collection of photographs I love — because sometimes the best thing to build is a memory.</p>
-      </div>
-
-      <div class="photo-grid">
-        <button class="photo-card photo-slot photo-slot-wide" type="button" data-photo-slot="1">
-          <span class="photo-placeholder-mark">✦</span>
-          <span><b>photo slot one</b><small>drop a favourite sky, place or moment here</small></span>
-        </button>
-        <button class="photo-card photo-slot" type="button" data-photo-slot="2">
-          <span class="photo-placeholder-mark">✦</span>
-          <span><b>photo slot two</b><small>something you noticed and had to capture</small></span>
-        </button>
-        <button class="photo-card photo-slot" type="button" data-photo-slot="3">
-          <span class="photo-placeholder-mark">✦</span>
-          <span><b>photo slot three</b><small>a little piece of the world you wanted to keep</small></span>
-        </button>
-      </div>
-
-      <div class="photo-note">
-        <span>📷</span>
-        <p>These are intentionally left as clean photo slots for now — add your own images to <code>assets/photos/</code> when you're ready.</p>
-      </div>
-    </section>
-
     <section id="about" class="section about-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">04 / hello, human</p>
+          <p class="eyebrow">05 / hello, human</p>
           <h2>About me<span>.</span></h2>
         </div>
       </div>
@@ -179,7 +149,7 @@
       <div class="about-grid">
         <div class="about-copy">
           <p class="large-copy">I'm an ECE student who gets disproportionately excited when an idea goes from <em>“wait, could this work?”</em> to an actual working thing.</p>
-          <p>I'm especially drawn to robotics, aerospace, electronics, computer vision and the physics behind the things we build. I like learning by making — which usually means a suspicious number of wires, diagrams, simulations and tabs open at once.</p>
+          <p>I'm especially drawn to robotics, aerospace, electronics, computer vision and the physics behind the things we build. I like learning by making, which usually means a suspicious number of wires, diagrams, simulations and tabs open at once.</p>
           <p>Long term, I'd love to work at the intersection of engineering and fundamental science, while continuing to build things simply because they're fascinating.</p>
         </div>
         <div class="mini-cards">
@@ -324,6 +294,44 @@
       </div>
     </section>
 
+    <section id="photography" class="section photography-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">04 / a little camera roll</p>
+          <h2>Things I stopped to notice<span>.</span></h2>
+        </div>
+        <p class="section-note">A small collection of photographs I love — because sometimes the best thing to build is a memory.</p>
+      </div>
+
+      <div class="photo-grid">
+        <button class="photo-card photo-image-card photo-card-wide" type="button" data-photo="assets/photos/sea-at-dusk.png" data-photo-alt="Ocean at dusk" aria-label="Open ocean at dusk photograph">
+          <img src="assets/photos/sea-at-dusk.png" alt="Ocean at dusk" loading="lazy" />
+          <span class="photo-caption">ocean at dusk</span>
+        </button>
+        <button class="photo-card photo-image-card" type="button" data-photo="assets/photos/cafe-sign.png" data-photo-alt="Pink cafe sign" aria-label="Open pink cafe sign photograph">
+          <img src="assets/photos/cafe-sign.png" alt="Pink cafe sign" loading="lazy" />
+          <span class="photo-caption">a tiny pink sign</span>
+        </button>
+        <button class="photo-card photo-image-card" type="button" data-photo="assets/photos/sunlit-house.png" data-photo-alt="Sunlit house and tree" aria-label="Open sunlit house photograph">
+          <img src="assets/photos/sunlit-house.png" alt="Sunlit house and tree" loading="lazy" />
+          <span class="photo-caption">late afternoon light</span>
+        </button>
+        <button class="photo-card photo-image-card" type="button" data-photo="assets/photos/blue-house-garden.png" data-photo-alt="Blue house surrounded by greenery" aria-label="Open blue house and garden photograph">
+          <img src="assets/photos/blue-house-garden.png" alt="Blue house surrounded by greenery" loading="lazy" />
+          <span class="photo-caption">somewhere a little quieter</span>
+        </button>
+        <button class="photo-card photo-image-card" type="button" data-photo="assets/photos/saxophone-mural.png" data-photo-alt="Colourful saxophone mural" aria-label="Open saxophone mural photograph">
+          <img src="assets/photos/saxophone-mural.png" alt="Colourful saxophone mural" loading="lazy" />
+          <span class="photo-caption">found art</span>
+        </button>
+      </div>
+
+      <div class="photo-note">
+        <span>📷</span>
+        <p>A few things I noticed, liked, and decided were worth keeping.</p>
+      </div>
+    </section>
+
     <section class="section currently-section">
       <div class="currently">
         <div>
@@ -340,7 +348,7 @@
     </section>
 
     <section id="contact" class="section contact-section">
-      <p class="eyebrow">05 / say hi</p>
+      <p class="eyebrow">06 / say hi</p>
       <h2>Let's build something<br><span>interesting.</span></h2>
       <p>If you've got a project, idea, research rabbit hole, or just want to talk about cool machines — hello.</p>
       <div class="contact-links social-links">
@@ -371,6 +379,17 @@
     <div class="image-modal-box">
       <button class="modal-close image-modal-close" type="button" aria-label="Close image">×</button>
       <img id="image-modal-img" src="" alt="" />
+    </div>
+  </div>
+
+  <div class="modal pdf-fullscreen-modal" id="pdf-fullscreen-modal" aria-hidden="true">
+    <div class="modal-backdrop pdf-fullscreen-backdrop"></div>
+    <div class="pdf-fullscreen-box">
+      <div class="pdf-fullscreen-head">
+        <span id="pdf-fullscreen-title">Technical Report</span>
+        <button class="modal-close" id="pdf-fullscreen-close" type="button" aria-label="Close full-screen PDF">×</button>
+      </div>
+      <iframe id="pdf-fullscreen-frame" title="Full-screen technical report" src=""></iframe>
     </div>
   </div>
 
